@@ -23,7 +23,7 @@ const FirstStep = (props) => {
             ref={register({
               required: 'First name is required.',
               pattern: {
-                value: /^[a-zA-Z]+$/,
+                value: /^[a-zA-Z{" "}-]+$/,
                 message: 'First name should contain only characters.'
               }
             })}
@@ -44,7 +44,7 @@ const FirstStep = (props) => {
             ref={register({
               required: 'Last name is required.',
               pattern: {
-                value: /^[a-zA-Z]+$/,
+                value: /^[a-zA-Z{" "}-]+$/,
                 message: 'Last name should contain only characters.'
               }
             })}
