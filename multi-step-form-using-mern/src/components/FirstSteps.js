@@ -7,9 +7,10 @@ const FirstStep = (props) => {
 
   const onSubmit = (data) => {
     console.log(data);
+    props.history.push('/second');
   };
 
-return(
+  return (
     <Form className="input-form" onSubmit={handleSubmit(onSubmit)}>
       <div className="col-md-6 offset-md-3">
         <Form.Group controlId="first_name">
@@ -59,7 +60,7 @@ return(
         </Button>
       </div>
     </Form>
-)
+  );
 };
 
 export default FirstStep;

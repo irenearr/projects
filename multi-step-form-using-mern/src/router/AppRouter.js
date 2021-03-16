@@ -2,19 +2,18 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import FirstStep from '../components/FirstSteps';
 import Header from '../components/Header';
+import SecondStep from '../components/SecondStep';
 
-const AppRouter = () => {
-
-    return(
-       <BrowserRouter>
+const AppRouter = () => (
+  <BrowserRouter>
     <div className="container">
-        <Header />
-        <Switch>
-            <Route component={FirstStep} path="/" exact={true} />
-        </Switch>
+      <Header />
+      <Switch>
+        <Route component={FirstStep} path="/" exact={true} />
+        <Route component={SecondStep} path="/second" />
+      </Switch>
     </div>
-</BrowserRouter>
-    )
-    }
+  </BrowserRouter>
+);
 
 export default AppRouter;
