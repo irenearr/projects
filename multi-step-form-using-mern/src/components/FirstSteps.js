@@ -1,14 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useForm } from 'react-hook-form';
 import { Form, Button } from 'react-bootstrap';
 
 const FirstStep = (props) => {
-  const { register, handleSubmit, errors } = useForm();
-
   const onSubmit = (data) => {
-    console.log(data);
+    props.updateUser(data);
     props.history.push('/second');
   };
+  const { user } = props;
+  const { register, handleSubmit, errors } = useForm({
+    defaultValues: {
+      first_name: user.first_name,
+      last_name: user.last_name
+    }
+  });
 
   return (
     <Form className="input-form" onSubmit={handleSubmit(onSubmit)}>
